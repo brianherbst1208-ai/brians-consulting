@@ -420,6 +420,18 @@ ul{margin:0;padding:0;list-style:none}
 @media (max-width:680px){
   .tier-select{grid-template-columns:1fr}
 }
+/* ===== hero promo video ===== */
+.videobox{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);overflow:hidden}
+.videowrap{position:relative;aspect-ratio:16/9;background:#0b1220}
+.promo{position:absolute;inset:0;width:100%;height:100%;display:block;background:#0b1220}
+.videoplay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;border:0;cursor:pointer;color:#fff;background:radial-gradient(circle at 50% 42%, rgba(37,99,235,.30), rgba(11,18,32,.74) 72%)}
+.videoplay__btn{width:74px;height:74px;border-radius:50%;background:rgba(255,255,255,.96);color:var(--primary-600);display:grid;place-items:center;box-shadow:0 14px 34px -10px rgba(0,0,0,.55);transition:transform .2s ease}
+.videoplay:hover .videoplay__btn{transform:scale(1.06)}
+.videoplay__btn svg{width:30px;height:30px;margin-left:4px}
+.videoplay__label{font-family:var(--display);font-weight:600;font-size:15px;text-shadow:0 1px 10px rgba(0,0,0,.45)}
+.videoplay.is-hidden{opacity:0;visibility:hidden;transition:opacity .3s ease, visibility .3s ease}
+.video-cap{margin-top:14px;text-align:center;font-size:13px;color:var(--text-2);font-family:var(--mono);letter-spacing:.02em}
+.console-showcase{max-width:620px;margin:0 auto}
 </style>
 </head>
 <body>
@@ -473,6 +485,47 @@ ul{margin:0;padding:0;list-style:none}
     </div>
 
     <div class="hero__visual reveal d2">
+      <div class="videobox">
+        <div class="console__bar">
+          <span class="console__dots" aria-hidden="true"><i class="dot-r"></i><i class="dot-y"></i><i class="dot-g"></i></span>
+          <span class="console__title">brians-consulting · watch</span>
+          <span class="console__pill" style="color:var(--primary-600);background:var(--primary-050);border-color:var(--primary-100)">2 MIN</span>
+        </div>
+        <div class="videowrap">
+          <video id="promoVideo" class="promo" controls preload="metadata" playsinline poster="https://pub.hyperagent.com/api/published/pbf01KY5706TJ_22W6GFWTNQD9YW7W/video-poster.jpg">
+            <source src="https://pub.hyperagent.com/api/published/pbf01KY56Y1CV_5H0AAPSW0HDPQE25/video-project.mp4" type="video/mp4">
+            Your browser can't play embedded video — <a href="https://pub.hyperagent.com/api/published/pbf01KY56Y1CV_5H0AAPSW0HDPQE25/video-project.mp4" target="_blank" rel="noopener noreferrer">watch it here</a>.
+          </video>
+          <button type="button" class="videoplay" id="videoPlay" aria-label="Play the video">
+            <span class="videoplay__btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="videoplay__label">Watch how it works · 2 min</span>
+          </button>
+        </div>
+      </div>
+      <p class="video-cap">See how Brian's Consulting captures leads &amp; reviews for local businesses</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CAPABILITY STRIP ===================== -->
+<section class="strip">
+  <div class="container strip__row">
+    <div class="strip__item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></span><span><b>Missed-Call Text-Back</b><small>never lose a caller</small></span></div>
+    <div class="strip__item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><span><b>24/7 AI Web Chat</b><small>books while you sleep</small></span></div>
+    <div class="strip__item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span><b>Reviews on Autopilot</b><small>5-stars, automatically</small></span></div>
+    <div class="strip__item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span><b>Google 3-Pack Ready</b><small>get found locally</small></span></div>
+  </div>
+</section>
+
+<!-- ===================== CONSOLE SHOWCASE ===================== -->
+<section class="section" id="console" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="spark"></span>Your command center</span>
+      <h2>Every lead, call &amp; review in one console</h2>
+      <p>Missed calls texted back, chats booking jobs, and 5-star reviews rolling in — all tracked in real time.</p>
+    </div>
+    <div class="console-showcase reveal">
       <div class="console" role="img" aria-label="Live growth console: a missed call being auto-texted back, plus today's captured leads, new 5-star reviews, and booked appointments.">
         <div class="console__bar">
           <span class="console__dots" aria-hidden="true"><i class="dot-r"></i><i class="dot-y"></i><i class="dot-g"></i></span>
@@ -514,16 +567,6 @@ ul{margin:0;padding:0;list-style:none}
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ===================== CAPABILITY STRIP ===================== -->
-<section class="strip">
-  <div class="container strip__row">
-    <div class="strip__item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></span><span><b>Missed-Call Text-Back</b><small>never lose a caller</small></span></div>
-    <div class="strip__item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><span><b>24/7 AI Web Chat</b><small>books while you sleep</small></span></div>
-    <div class="strip__item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span><b>Reviews on Autopilot</b><small>5-stars, automatically</small></span></div>
-    <div class="strip__item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span><b>Google 3-Pack Ready</b><small>get found locally</small></span></div>
   </div>
 </section>
 <!-- ===================== PROBLEM / VALUE ===================== -->
@@ -956,6 +999,13 @@ ul{margin:0;padding:0;list-style:none}
     if(goToCheckout(tier, emailEl?emailEl.value:''))return;
     form.style.display='none';ok.classList.add('show');ok.scrollIntoView({behavior:'smooth',block:'center'});
   });}
+
+  var vp=document.getElementById('videoPlay'),vid=document.getElementById('promoVideo');
+  if(vp&&vid){
+    vp.addEventListener('click',function(){var p=vid.play();if(p&&p.catch)p.catch(function(){});});
+    vid.addEventListener('play',function(){vp.classList.add('is-hidden');});
+    vid.addEventListener('ended',function(){vp.classList.remove('is-hidden');});
+  }
 
   var yr=document.getElementById('yr');if(yr){yr.textContent=new Date().getFullYear();}
 })();
