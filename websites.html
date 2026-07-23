@@ -468,6 +468,16 @@ ul{margin:0;padding:0;list-style:none}
 @media (max-width:560px){
   .statgrid{grid-template-columns:1fr}
 }
+
+/* one-time audit offer card */
+.audit-card{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:center;max-width:1000px;margin:0 auto;border:1px solid var(--primary-100);border-radius:var(--radius-lg);background:linear-gradient(135deg,#eff5ff,#e7eeff);box-shadow:var(--shadow);padding:34px 38px}
+.audit-card__price{display:flex;align-items:flex-start;gap:5px}
+.audit-card__price .cur{font-family:var(--display);font-weight:600;font-size:26px;margin-top:8px;color:var(--text-2)}
+.audit-card__price .num{font-family:var(--display);font-weight:700;font-size:62px;line-height:.9;letter-spacing:-.03em}
+.audit-card__price .per{align-self:flex-end;margin-bottom:11px;color:var(--text-2);font-weight:600;font-size:14px}
+.audit-card__head{font-size:16.5px;color:var(--text);font-weight:600;margin:14px 0 20px;line-height:1.45;max-width:360px}
+.audit-card__right .tier__list{margin-bottom:0}
+@media (max-width:820px){.audit-card{grid-template-columns:1fr;gap:22px;padding:28px 24px}}
 </style>
 </head>
 <body>
@@ -674,7 +684,6 @@ ul{margin:0;padding:0;list-style:none}
         <div class="tier__body">
           <div class="tier__inc">Everything in Starter, plus</div>
           <ul class="tier__list">
-            <li><svg class="star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><b>Everything in the Starter Engine</b></span></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><b>Automated Google Review Campaign</b> engine — turn happy jobs into 5-star reviews on autopilot</span></li>
           </ul>
           <div class="tier__cta">
@@ -693,9 +702,7 @@ ul{margin:0;padding:0;list-style:none}
         <div class="tier__body">
           <div class="tier__inc">Everything in Growth, plus</div>
           <ul class="tier__list">
-            <li><svg class="star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><b>Everything in the Growth Engine</b></span></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><b>Google Business Profile 3-Pack</b> optimization</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><b>Quarterly AI audits</b> to keep you ahead</span></li>
           </ul>
           <div class="tier__cta">
             <a href="#demo" class="btn btn--ghost btn--lg btn--block" data-tier="domination">Get Started — $597/mo</a>
@@ -711,6 +718,35 @@ ul{margin:0;padding:0;list-style:none}
     </div>
   </div>
 </section>
+
+<!-- ===================== STANDALONE AUDIT ===================== -->
+<section class="section" id="audit" style="background:var(--surface);border-top:1px solid var(--border)">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="spark"></span>Not ready for monthly? Start here</span>
+      <h2>Standalone 1-Time AI &amp; Operations Audit</h2>
+    </div>
+    <div class="audit-card reveal">
+      <div class="audit-card__left">
+        <div class="audit-card__price"><span class="cur">$</span><span class="num">297</span><span class="per">one-time</span></div>
+        <p class="audit-card__head">Save 5–10+ hours in your workweek — it pays for itself in as little as one week.</p>
+        <a href="#demo" data-tier="audit" class="btn btn--primary btn--lg">Get Your Audit — $297
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <div class="tier__foot" style="text-align:left;margin-top:12px">$0 recurring · one-time investment</div>
+      </div>
+      <div class="audit-card__right">
+        <ul class="tier__list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Complete back-office workflow analysis to uncover hidden manual bottlenecks.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Custom AI &amp; automation roadmap tailored specifically to your trade.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Automate scheduling, follow-ups, and admin tasks so you can focus on billable jobs.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Standalone service — $0 recurring commitment required.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== FINAL CTA BAND ===================== -->
 <section class="cta-band">
   <div class="container">
@@ -844,7 +880,8 @@ ul{margin:0;padding:0;list-style:none}
   var STRIPE_LINKS = {
     starter:    "https://buy.stripe.com/cNi28tdf04Ga21x8JUa3u01",   // Starter Engine  $297/mo
     growth:     "https://buy.stripe.com/5kQ4gB0se0pU49F7FQa3u05",   // Growth Engine   $447/mo
-    domination: "https://buy.stripe.com/eVqcN75My4Gaay3f8ia3u06"    // Domination      $597/mo
+    domination: "https://buy.stripe.com/eVqcN75My4Gaay3f8ia3u06",   // Domination      $597/mo
+    audit:      "https://buy.stripe.com/PASTE_ONE_TIME_AUDIT_LINK"  // 1-Time Audit    $297 one-time
   };
   function isConfigured(u){return /^https?:\/\//.test(u) && u.indexOf('PASTE_')===-1;}
   function goToCheckout(tier){var link=STRIPE_LINKS[tier];if(!isConfigured(link))return false;window.location.href=link;return true;}
